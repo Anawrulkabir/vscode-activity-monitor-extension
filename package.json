@@ -1,0 +1,52 @@
+{
+  "name": "cursor-movement-monitor",
+  "displayName": "Cursor Movement Monitor",
+  "description": "Monitors cursor movement and shows warning after 10 seconds of inactivity",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorMonitor.toggle",
+        "title": "Toggle Cursor Monitor",
+        "category": "Cursor Monitor"
+      },
+      {
+        "command": "cursorMonitor.reset",
+        "title": "Reset Timer",
+        "category": "Cursor Monitor"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor Movement Monitor",
+      "properties": {
+        "cursorMonitor.warningTime": {
+          "type": "number",
+          "default": 10,
+          "description": "Warning time in seconds"
+        },
+        "cursorMonitor.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable cursor monitoring"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x"
+  }
+}
