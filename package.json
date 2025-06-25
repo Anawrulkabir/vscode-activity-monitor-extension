@@ -3,6 +3,19 @@
   "displayName": "Cursor Movement Monitor",
   "description": "Monitors cursor movement and shows warning after 10 seconds of inactivity",
   "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cursor-movement-monitor.git"
+  },
+  "keywords": [
+    "cursor",
+    "monitor",
+    "inactivity",
+    "productivity",
+    "timer"
+  ],
+  "license": "MIT",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -10,7 +23,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -43,7 +56,9 @@
     }
   },
   "scripts": {
-    "test": "node ./test/runTest.js"
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",
